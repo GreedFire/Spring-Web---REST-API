@@ -13,10 +13,6 @@ public class TasksApplicationTests {
 
 	@Test
 	public void contextLoads() {
-
-
-
-		Assert.assertEquals(0,0);
 	}
 
 }
