@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.http.MediaType.*;
 
+@CrossOrigin(origins = "*")
 @Transactional
 @RestController
 @RequestMapping("/v1/task")
@@ -23,7 +23,7 @@ public class TaskController {
 
     @RequestMapping(method = RequestMethod.GET, value = "getTasks")
     public List<TaskDto> getTasks() {
-        return new ArrayList<>();
+        return taskMapper.maptoTaskDtoList(service.getAllTasks());
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "getTask")
